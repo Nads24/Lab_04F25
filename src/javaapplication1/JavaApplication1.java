@@ -130,11 +130,19 @@ public class JavaApplication1 extends Application {
 
             total_expenses.setText("Total expenses incurred by the business person: $" + totalExpenses);
             total_allowable.setText("Total allowable expenses for the trip: $" + totalAllowable);
+            if(excessAmount>0){
             excess.setText("Excess that must be paid by the business person: $" + excessAmount);
+            }else{
+            excess.setText("Excess that must be paid by the business person: $" + 0);
+            }   
             saved.setText("Amount saved by the business person: $" + amountSaved);
 
         } catch (NumberFormatException e) {
             showError("Invalid input. Please enter valid numbers.");
+            total_expenses.setText("Invalid input. Please enter valid numbers." );
+            total_allowable.setText("Invalid input. Please enter valid numbers.");
+            excess.setText("Invalid input. Please enter valid numbers.");
+            saved.setText("Invalid input. Please enter valid numbers.");
         }
     }
 
